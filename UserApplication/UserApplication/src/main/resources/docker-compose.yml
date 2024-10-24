@@ -1,0 +1,19 @@
+version: '3'
+services:
+
+  eureka-server:
+    image: eureka-server-image # Define your eureka server image here
+    ports:
+      - "8761:8761"
+
+  library-service:
+    build:
+      context: ./library-service
+    ports:
+      - "8081:8080"
+
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - "8082:8080"
